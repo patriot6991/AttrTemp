@@ -1,5 +1,6 @@
 import maya.cmds as mc
 
+
 class AttrTemp(object):
     def __init__(self):
         self.tx = 0
@@ -15,8 +16,7 @@ class AttrTemp(object):
         self.g = 0.7
         self.b = 0.9
 
-
-    #input
+    # input
     def world(self, *args):
         self.r = 0.7
         self.g = 0.7
@@ -28,7 +28,7 @@ class AttrTemp(object):
         self.b = 0.7
 
     def getT(self, *args):
-        self.tx= mc.getAttr('.tx')
+        self.tx = mc.getAttr('.tx')
         self.ty = mc.getAttr('.ty')
         self.tz = mc.getAttr('.tz')
         mc.floatField('ftx', value=self.tx, edit=True, enable=True)
@@ -128,75 +128,75 @@ class AttrTemp(object):
         mc.setAttr('.sz', 1)
 
     def ui(self):
-        win = mc.window(title='attrTemp', widthHeight=(390,270))
+        win = mc.window(title='attrTemp', widthHeight=(390, 270))
         form = mc.formLayout()
 
-        #text
-        inText = mc.text(l='inPut', h=(30))
-        outText = mc.text(l='outPut', h=(30))
+        # text
+        in_text = mc.text(l='inPut', h=30)
+        out_text = mc.text(l='outPut', h=30)
 
-        #button
-        world = mc.button(l='world', w=(70), h=(70), c=self.world, bgc=(0.9,0.5,0.5))
-        inO = mc.button(l='orient', w=(70), h=(70), c=self.getO, bgc=(0.6,0.6,0.6))
-        local = mc.button(l='local', w=(70), h=(70), c=self.local, bgc=(0.5,0.5,0.9))
-        inT = mc.button(l='translate', w=(70), h=(70), c=self.getT, bgc=(self.r,self.g,self.b))
-        inR = mc.button(l='rotate', w=(70), h=(70), c=self.getR, bgc=(self.r,self.g,self.b))
-        inS = mc.button(l='scale', w=(70), h=(70), c=self.getS, bgc=(self.r,self.g,self.b))
-        outAll = mc.button(l='all', w=(70), h=(70), c=self.setAll)
-        outO = mc.button(l='orient', w=(70), h=(70), c=self.setO, bgc=(0.6,0.6,0.6))
-        outZero = mc.button(l='Zero', w=(70), h=(70), c=self.setZero, bgc=(0.9,0.9,0.9))
-        outT = mc.button(l='translate', w=(70), h=(70), c=self.setT)
-        outR = mc.button(l='rotate', w=(70), h=(70), c=self.setR)
-        outS = mc.button(l='scale', w=(70), h=(70), c=self.setS)
-        resetButton = mc.button(l='reset', w=(70), h=(30), c=self.getReset, bgc=(0.9,0.9,0.9))
+        # button
+        world = mc.button(l='world', w=70, h=70, c=self.world, bgc=(0.9, 0.5, 0.5))
+        in_o = mc.button(l='orient', w=70, h=70, c=self.getO, bgc=(0.6, 0.6, 0.6))
+        local = mc.button(l='local', w=70, h=70, c=self.local, bgc=(0.5, 0.5, 0.9))
+        in_t = mc.button(l='translate', w=70, h=70, c=self.getT, bgc=(self.r, self.g, self.b))
+        in_r = mc.button(l='rotate', w=70, h=70, c=self.getR, bgc=(self.r, self.g, self.b))
+        in_s = mc.button(l='scale', w=70, h=70, c=self.getS, bgc=(self.r, self.g, self.b))
+        out_all = mc.button(l='all', w=70, h=70, c=self.setAll)
+        out_o = mc.button(l='orient', w=70, h=70, c=self.setO, bgc=(0.6, 0.6, 0.6))
+        out_zero = mc.button(l='Zero', w=70, h=70, c=self.setZero, bgc=(0.9, 0.9, 0.9))
+        out_t = mc.button(l='translate', w=70, h=70, c=self.setT)
+        out_r = mc.button(l='rotate', w=70, h=70, c=self.setR)
+        out_s = mc.button(l='scale', w=70, h=70, c=self.setS)
+        reset_button = mc.button(l='reset', w=70, h=30, c=self.getReset, bgc=(0.9, 0.9, 0.9))
 
-        #Field
-        fieldTX = mc.floatField('ftx', w=(70), h=(20), value=self.tx)
-        fieldTY = mc.floatField('fty', w=(70), h=(20), value=self.ty)
-        fieldTZ = mc.floatField('ftz', w=(70), h=(20), value=self.tz)
-        fieldRX = mc.floatField('frx', w=(70), h=(20), value=self.rx)
-        fieldRY = mc.floatField('fry', w=(70), h=(20), value=self.ry)
-        fieldRZ = mc.floatField('frz', w=(70), h=(20), value=self.rz)
-        fieldSX = mc.floatField('fsx', w=(70), h=(20), value=self.sx)
-        fieldSY = mc.floatField('fsy', w=(70), h=(20), value=self.sy)
-        fieldSZ = mc.floatField('fsz', w=(70), h=(20), value=self.sz)
+        # Field
+        fieldTX = mc.floatField('ftx', w=70, h=20, value=self.tx)
+        fieldTY = mc.floatField('fty', w=70, h=20, value=self.ty)
+        fieldTZ = mc.floatField('ftz', w=70, h=20, value=self.tz)
+        fieldRX = mc.floatField('frx', w=70, h=20, value=self.rx)
+        fieldRY = mc.floatField('fry', w=70, h=20, value=self.ry)
+        fieldRZ = mc.floatField('frz', w=70, h=20, value=self.rz)
+        fieldSX = mc.floatField('fsx', w=70, h=20, value=self.sx)
+        fieldSY = mc.floatField('fsy', w=70, h=20, value=self.sy)
+        fieldSZ = mc.floatField('fsz', w=70, h=20, value=self.sz)
 
-
-        #inPut layout
+        # inPut layout
         mc.formLayout(form, edit=True, attachForm=[
-            (inText,'top',5),(inText,'left',70),
-            (world,'top',40),(world,'left',10),
-            (inO,'top',115),(inO,'left',10),
-            (local,'top',190),(local,'left',10),
-            (inT,'top',40),(inT,'left',85),
-            (inR,'top',115),(inR,'left',85),
-            (inS,'top',190),(inS,'left',85)
+            (in_text, 'top', 5), (in_text, 'left', 70),
+            (world, 'top', 40), (world, 'left', 10),
+            (in_o, 'top', 115), (in_o, 'left', 10),
+            (local, 'top', 190), (local, 'left', 10),
+            (in_t, 'top', 40), (in_t, 'left', 85),
+            (in_r, 'top', 115), (in_r, 'left', 85),
+            (in_s, 'top', 190), (in_s, 'left', 85)
         ])
-        #field layout
+        # field layout
         mc.formLayout(form, edit=True, attachForm=[
-            (fieldTX,'top',40),(fieldTX,'left',160),
-            (fieldTY,'top',65),(fieldTY,'left',160),
-            (fieldTZ,'top',90),(fieldTZ,'left',160),
-            (fieldRX,'top',115),(fieldRX,'left',160),
-            (fieldRY,'top',140),(fieldRY,'left',160),
-            (fieldRZ,'top',165),(fieldRZ,'left',160),
-            (fieldSX,'top',190),(fieldSX,'left',160),
-            (fieldSY,'top',215),(fieldSY,'left',160),
-            (fieldSZ,'top',240),(fieldSZ,'left',160),
+            (fieldTX, 'top', 40), (fieldTX, 'left', 160),
+            (fieldTY, 'top', 65), (fieldTY, 'left', 160),
+            (fieldTZ, 'top', 90), (fieldTZ, 'left', 160),
+            (fieldRX, 'top', 115), (fieldRX, 'left', 160),
+            (fieldRY, 'top', 140), (fieldRY, 'left', 160),
+            (fieldRZ, 'top', 165), (fieldRZ, 'left', 160),
+            (fieldSX, 'top', 190), (fieldSX, 'left', 160),
+            (fieldSY, 'top', 215), (fieldSY, 'left', 160),
+            (fieldSZ, 'top', 240), (fieldSZ, 'left', 160),
         ])
-        #outPut layout
+        # outPut layout
         mc.formLayout(form, edit=True, attachForm=[
-            (outText,'top',5),(outText,'left',290),
-            (outAll,'top',40),(outAll,'left',310),
-            (outO,'top',115),(outO,'left',310),
-            (outZero,'top',190),(outZero,'left',310),
-            (outT,'top',40),(outT,'left',235),
-            (outR,'top',115),(outR,'left',235),
-            (outS,'top',190),(outS,'left',235)
+            (out_text, 'top', 5), (out_text, 'left', 290),
+            (out_all, 'top', 40), (out_all, 'left', 310),
+            (out_o, 'top', 115), (out_o, 'left', 310),
+            (out_zero, 'top', 190), (out_zero, 'left', 310),
+            (out_t, 'top', 40), (out_t, 'left', 235),
+            (out_r, 'top', 115), (out_r, 'left', 235),
+            (out_s, 'top', 190), (out_s, 'left', 235)
         ])
-        #resetButton layout
-        mc.formLayout(form, edit=True, attachForm=[(resetButton,'top',5),(resetButton,'left',160)])
+        # reset_button layout
+        mc.formLayout(form, edit=True, attachForm=[(reset_button, 'top', 5), (reset_button, 'left', 160)])
         mc.showWindow(win)
+
 
 a = AttrTemp()
 a.ui()
